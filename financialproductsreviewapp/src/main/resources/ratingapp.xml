@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="financialProduct"
+		class="financialproductsreviewappproject.financialproductsreviewapp.FinancialProduct">
+		<constructor-arg type="int" value="1" />
+		<constructor-arg type="java.lang.String"
+			value="Debit Card" />
+		<constructor-arg type="java.lang.String"
+			value="Can be used to withdraw amount from your bank account" />
+		<constructor-arg type="int" value="10" />
+		<constructor-arg
+			type="financialproductsreviewappproject.financialproductsreviewapp.Review"
+			ref="review" />
+	</bean>
+
+	<bean id="review"
+		class="financialproductsreviewappproject.financialproductsreviewapp.Review">
+		<property name="reviewId" value="101" />
+		<property name="product_reviewed" value="Debit Card" />
+		<property name="review_text" value="Very good product" />
+		<property name="comments">
+			<list>
+				<ref bean="comment1" />
+				<ref bean="comment2" />
+				<ref bean="comment3" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="user"
+		class="financialproductsreviewappproject.financialproductsreviewapp.User">
+		<constructor-arg type="java.lang.String"
+			value="Kalpesh" />
+		<constructor-arg type="java.lang.String"
+			value="kalpesh@gmail.com" />
+		<constructor-arg type="java.lang.String"
+			value="Pass@123" />
+		<constructor-arg type="java.lang.String"
+			value="9876543210" />
+	</bean>
+
+	<bean id="comment1"
+		class="financialproductsreviewappproject.financialproductsreviewapp.Comment">
+		<constructor-arg type="int" value="1001" />
+		<constructor-arg type="java.lang.String"
+			value="Easy to use" />
+		<constructor-arg type="int" value="5000" />
+		<constructor-arg type="int" value="20" />
+		<constructor-arg type="boolean" value="false" />
+	</bean>
+	<bean id="comment2"
+		class="financialproductsreviewappproject.financialproductsreviewapp.Comment">
+		<constructor-arg type="int" value="1002" />
+		<constructor-arg type="java.lang.String"
+			value="Durable" />
+		<constructor-arg type="int" value="4500" />
+		<constructor-arg type="int" value="50" />
+		<constructor-arg type="boolean" value="false" />
+	</bean>
+	<bean id="comment3"
+		class="financialproductsreviewappproject.financialproductsreviewapp.Comment">
+		<constructor-arg type="int" value="1003" />
+		<constructor-arg type="java.lang.String"
+			value="Rigid and unbrekable" />
+		<constructor-arg type="int" value="5500" />
+		<constructor-arg type="int" value="35" />
+		<constructor-arg type="boolean" value="true" />
+	</bean>
+
+</beans>

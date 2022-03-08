@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="customer" class="petstoreproject.petstoreapp.Customer"
+		p:customerName="Kalpesh" p:email="kalpesh@gamil.com"
+		p:customerService-ref="customerService">
+		<property name="address" value="Aurangabad" />
+		<property name="mobile" value="9876543210" />
+		<!-- <property name="customerService"> <ref bean="customerService" /> </property> -->
+	</bean>
+
+	<bean id="customerService"
+		class="petstoreproject.petstoreapp.CustomerService"
+		factory-method="createCustomerSeriveHelplineNumber" />
+
+</beans>
