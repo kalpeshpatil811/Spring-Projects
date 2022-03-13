@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="employee"
+		class="employeetasksystemproject.employeetasksystem.Employee">
+		<property name="employeeId" value="44" />
+		<property name="employeeName" value="Kalpesh Patil" />
+		<property name="department" value="IT" />
+		<property name="designation" value="Analyst" />
+		<property name="password" value="Pass@123" />
+		<property name="superior" ref="superior" />
+		<property name="taskList">
+			<list>
+				<ref bean="task1" />
+				<ref bean="task2" />
+				<ref bean="task3" />
+			</list>
+		</property>
+
+		<property name="AttendanceList">
+			<list>
+				<ref bean="attendance1" />
+				<ref bean="attendance2" />
+				<ref bean="attendance3" />
+			</list>
+		</property>
+
+		<property name="rating" value="EXCELLENT" />
+	</bean>
+	<bean id="superior"
+		class="employeetasksystemproject.employeetasksystem.Employee">
+		<property name="employeeId" value="10" />
+		<property name="employeeName" value="Shailesh" />
+		<property name="department" value="IT" />
+		<property name="designation" value="Sr. Manager" />
+		<property name="password" value="Pass@789" />
+		<property name="rating" value="GOOD" />
+	</bean>
+
+	<bean id="attendance1"
+		class="employeetasksystemproject.employeetasksystem.Attendance">
+		<constructor-arg type="int" value="101" />
+		<constructor-arg type="java.lang.String"
+			value="2022-03-22 05:15:00" />
+		<constructor-arg type="Attendence_Types"
+			value="PRESENT" />
+	</bean>
+
+	<bean id="attendance2"
+		class="employeetasksystemproject.employeetasksystem.Attendance">
+		<constructor-arg type="int" value="102" />
+		<constructor-arg type="java.lang.String"
+			value="2022-03-23 05:15:00" />
+		<constructor-arg type="Attendence_Types"
+			value="ABSENT" />
+	</bean>
+
+	<bean id="attendance3"
+		class="employeetasksystemproject.employeetasksystem.Attendance">
+		<constructor-arg type="int" value="103" />
+		<constructor-arg type="java.lang.String"
+			value="2022-03-24 05:15:00" />
+		<constructor-arg type="Attendence_Types"
+			value="PRESENT" />
+	</bean>
+
+	<bean id="task1"
+		class="employeetasksystemproject.employeetasksystem.Task">
+		<constructor-arg type="int" value="501" />
+		<constructor-arg type="java.lang.String"
+			value="SpringAssignment" />
+		<constructor-arg type="java.lang.String"
+			value="Has to Complete the Case Study-1" />
+		<constructor-arg type="java.lang.String"
+			value="8-3-2022" />
+		<constructor-arg type="java.lang.String"
+			value="9-3-2022" />
+		<constructor-arg type="Employee" ref="employee" />
+	</bean>
+
+	<bean id="task2"
+		class="employeetasksystemproject.employeetasksystem.Task">
+		<constructor-arg type="int" value="502" />
+		<constructor-arg type="java.lang.String"
+			value="SpringAssignment" />
+		<constructor-arg type="java.lang.String"
+			value="Has to Complete the Case Study-2" />
+		<constructor-arg type="java.lang.String"
+			value="8-3-2022" />
+		<constructor-arg type="java.lang.String"
+			value="10-3-2022" />
+		<constructor-arg type="Employee" ref="employee" />
+	</bean>
+
+	<bean id="task3"
+		class="employeetasksystemproject.employeetasksystem.Task">
+		<constructor-arg type="int" value="503" />
+		<constructor-arg type="java.lang.String"
+			value="SpringAssignment" />
+		<constructor-arg type="java.lang.String"
+			value="Has to Complete the Case Study-3" />
+		<constructor-arg type="java.lang.String"
+			value="8-3-2022" />
+		<constructor-arg type="java.lang.String"
+			value="11-3-2022" />
+		<constructor-arg type="Employee" ref="employee" />
+	</bean>
+
+</beans>
