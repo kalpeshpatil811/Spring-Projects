@@ -1,0 +1,29 @@
+
+GET:
+http://localhost:9091/myController
+http://localhost:9091/topics
+
+Post:   
+http://localhost:9091/topics
+Postman : choose : Body  , raw , JSON
+{
+	"name": "Kalpesh Technologies ",
+	"description": "Kalpesh",
+	"id": "KalpeshJava"
+}
+   
+{
+    "name": "UI Technologies",
+    "description": "JavaScript",
+    "id": "ReactJS"
+}
+
+PUT:
+http://localhost:9091/topics/Spring
+
+Output  of postman :  
+{
+    "name": "SpringBoot",
+    "description": "Spring MVC",
+    "id": "Spring"
+}

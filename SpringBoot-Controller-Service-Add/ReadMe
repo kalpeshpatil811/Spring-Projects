@@ -1,0 +1,11 @@
+
+GET:
+http://localhost:9091/topics
+
+POST:
+http://localhost:9091/topics
+{
+    "name": "UI Technology",
+    "description": "JavaScript",
+    "id": "ReactJs"
+}

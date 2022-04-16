@@ -1,0 +1,11 @@
+
+GET:
+http://localhost:9091/allusers
+
+POST:
+http://localhost:9091/adduser
+{
+    "id": 101,
+    "name": "Kalpesh",
+    "email": "kalpesh@gmail.com"
+}
